@@ -12,3 +12,5 @@ __email__ = 'bpw1621@gmail.com'
 __version__ = '0.0a0'
 
 logging.getLogger(__name__).addHandler(NullHandler())
+
+ACCESSOR_NAME = 'bpw'
