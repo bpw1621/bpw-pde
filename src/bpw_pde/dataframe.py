@@ -46,11 +46,12 @@ class DataframeAccessor:
         """
         Applies :meth:`bpw_pde.common.clean_name` to all column names of the captured :class:`pandas.DataFrame`.
 
-        :return: The captured :class:`pandas.DataFrame` with cleaned column names.
+        :return: A copy of the captured :class:`pandas.DataFrame` with cleaned column names.
         """
 
-        self._df.columns = [clean_name(column) for column in self._df.columns]
-        return self._df
+        df = self._df.copy()
+        df.columns = [clean_name(column) for column in df.columns]
+        return df
 
     def samp(self, n: int = 5) -> DataFrame:
         """

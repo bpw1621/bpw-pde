@@ -21,28 +21,31 @@ class SeriesAccessor:
         """
         Applies :meth:`bpw_pde.common.clean_name` to the name of the captured :class:`pandas.Series`.
 
-        :return: The captured :class:`pandas.Series` with a cleaned name.
+        :return: A copy of the captured :class:`pandas.Series` with a cleaned name.
         """
 
-        self._series.name = clean_name(self._series.name)
-        return self._series
+        series = self._series.copy()
+        series.name = clean_name(series.name)
+        return series
 
     @property
     def hashify(self) -> Series:
         """
         Applies :meth:`bpw_pde.common.md5` to the captured :class:`pandas.Series`.
 
-        :return: The captured :class:`pandas.Series` MD5 hashes.
+        :return: A copy of the captured :class:`pandas.Series` MD5 hashes.
         """
 
-        return self._series.apply(md5)
+        series = self._series.copy()
+        return series.astype('string').apply(md5).astype('string')
 
     def normalize(self, form: str = DEFAULT_UNICODE_NORMALIZATION_FORM) -> Series:
         """
         Applies :meth:`bpw_pde.common.normalize` to the captured :class:`pandas.Series`.
 
         :param form: Unicode normalization form, defaults to `'NFKC'`.
-        :return: The Unicode normalized captured :class:`pandas.Series`.
+        :return: A copy of the captured :class:`pandas.Series` Unicode normalized.
         """
 
-        return self._series.apply(functools.partial(unicode_normalize, form=form))
+        series = self._series.copy()
+        return series.apply(functools.partial(unicode_normalize, form=form))
