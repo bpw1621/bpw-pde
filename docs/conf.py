@@ -18,7 +18,7 @@ master_doc = 'index'
 
 # -- Project information -----------------------------------------------------
 
-project = 'Dr. Bryan Patrick Wood's Pandas Extension Package'
+project = 'Dr. Bryan Patrick Wood\'s Pandas Extension Package'
 copyright = '2021, Bryan Patrick Wood'
 author = 'Bryan Patrick Wood'
 

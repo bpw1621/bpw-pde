@@ -7,7 +7,7 @@ from tqdm.autonotebook import tqdm
 
 __author__ = 'Bryan Patrick Wood'
 __email__ = 'bpw1621@gmail.com'
-__version__ = '0.0a0'
+__version__ = '0.0a1'
 
 logging.getLogger(__name__).addHandler(NullHandler())
 tqdm.pandas()

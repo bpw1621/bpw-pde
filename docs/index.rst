@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 Welcome to Dr. Bryan Patrick Wood's Pandas Extension Package's documentation!
-=========================================================
+=============================================================================
 
 .. toctree::
    :maxdepth: 2
